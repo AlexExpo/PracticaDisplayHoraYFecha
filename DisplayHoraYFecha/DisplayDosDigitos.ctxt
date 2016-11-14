@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.params=limiteDisplay
+comment0.target=DisplayDosDigitos(int)
+comment0.text=\r\n\ Constructor\ de\ la\ clase\ DisplayDosDigitos\r\n\r\n\ @param\ limiteDisplay\ El\ valor\ m\u00E1ximo\ que\ ya\ no\ puede\ mostrar\ el\ display\r\n
+comment1.params=
+comment1.target=int\ getValor()
+comment1.text=\r\n\ Devuelve\ el\ valor\ actual\ como\ n\u00FAmero\ entero\r\n
+comment2.params=
+comment2.target=java.lang.String\ getValorDelDisplay()
+comment2.text=\r\n\ Devuelve\ el\ valor\ del\ display\ como\ cadena\ de\ caracteres\ de\ longitud\ 2\r\n
+comment3.params=nuevoValor
+comment3.target=void\ setValor(int)
+comment3.text=\r\n\ Fija\ un\ nuevo\ valor\ para\ el\ display.\ Si\ el\ nuevo\ valor\ no\ es\ legal,\ \r\n\ entonces\ no\ hace\ nada.\r\n
+comment4.params=
+comment4.target=void\ incrementaValor()
+comment4.text=\r\n\ Incrementa\ el\ valor\ del\ display.\ Si\ llega\ al\ limite\ cambia\ a\ uno.\r\n
+numComments=5
