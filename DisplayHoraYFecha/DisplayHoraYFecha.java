@@ -9,14 +9,20 @@ public class DisplayHoraYFecha
     private NumberDisplay hora;
     
     private NumberDisplay minuto;
+    
+    private boolean mostrarFecha;
+    
+    private boolean mostrarHora;
 
-    public DisplayHoraYFecha()
+    public DisplayHoraYFecha(boolean mostrarLaFecha, boolean mostrarLaHora)
    {
     dia = new DisplayDosDigitos(31);
     mes = new DisplayDosDigitos(13);
     anno = new DisplayDosDigitos(100);
     hora = new NumberDisplay(24);
     minuto = new NumberDisplay(60);
+    mostrarFecha = mostrarLaFecha;
+    mostrarHora = mostrarLaHora;
    }
    public void avanzarMomento()
    {
@@ -34,7 +40,7 @@ public class DisplayHoraYFecha
             }
         }
    }
-    public void setMomento(int nuevoDia, int nuevoMes, int nuevoAnno, int nuevaHora, int nuevoMinuto)
+   public void setMomento(int nuevoDia, int nuevoMes, int nuevoAnno, int nuevaHora, int nuevoMinuto)
     {
         if(nuevaHora >= 0 && nuevaHora < 24 && nuevoMinuto >=0 && nuevoMinuto <60 && nuevoDia >=1 && nuevoDia <31 && nuevoMes >=1 && nuevoMes <13 && nuevoAnno >=1 && nuevoAnno <100) {
            hora.setValue(nuevaHora);
@@ -44,8 +50,21 @@ public class DisplayHoraYFecha
            anno.setValor(nuevoAnno);
         }
     }
-    public String getMomento()
+   public String getMomento()
     {
-        return hora.getDisplayValue() + ":" + minuto.getDisplayValue() + " " + dia.getValorDelDisplay() + "-" + mes.getValorDelDisplay() + "-" + anno.getValorDelDisplay();
+        String mostrarCadena = "";
+        if(mostrarHora == true && mostrarFecha == true) {
+            mostrarCadena = hora.getDisplayValue() + ":" + minuto.getDisplayValue() + " " + dia.getValorDelDisplay() + "/" + mes.getValorDelDisplay() + "/" + anno.getValorDelDisplay();
+        }
+        if(mostrarHora == true && mostrarFecha == false) {
+            mostrarCadena = hora.getDisplayValue() + ":" + minuto.getDisplayValue();
+        }
+        if(mostrarHora == false && mostrarFecha == true) {
+            mostrarCadena = dia.getValorDelDisplay() + "/" + mes.getValorDelDisplay() + "/" + anno.getValorDelDisplay();
+        }
+        if(mostrarHora == false && mostrarFecha == false) {
+            mostrarCadena = "";
+        }
+        return mostrarCadena;
     }
 }

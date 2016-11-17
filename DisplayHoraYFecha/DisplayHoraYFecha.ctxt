@@ -1,6 +1,6 @@
 #BlueJ class context
-comment0.params=
-comment0.target=DisplayHoraYFecha()
+comment0.params=mostrarLaFecha\ mostrarLaHora
+comment0.target=DisplayHoraYFecha(boolean,\ boolean)
 comment1.params=
 comment1.target=void\ avanzarMomento()
 comment2.params=nuevoDia\ nuevoMes\ nuevoAnno\ nuevaHora\ nuevoMinuto
