@@ -67,4 +67,22 @@ public class DisplayHoraYFecha
         }
         return mostrarCadena;
     }
+    
+     public String getMomento(boolean mostrarHora2, boolean mostrarFecha2)
+    {
+        String mostrarCadena = "";
+        if(mostrarHora2 == true && mostrarFecha2 == true) {
+            mostrarCadena = hora.getDisplayValue() + ":" + minuto.getDisplayValue() + " " + dia.getValorDelDisplay() + "/" + mes.getValorDelDisplay() + "/" + anno.getValorDelDisplay();
+        }
+        if(mostrarHora2 == true && mostrarFecha2 == false) {
+            mostrarCadena = hora.getDisplayValue() + ":" + minuto.getDisplayValue();
+        }
+        if(mostrarHora2 == false && mostrarFecha2 == true) {
+            mostrarCadena = dia.getValorDelDisplay() + "/" + mes.getValorDelDisplay() + "/" + anno.getValorDelDisplay();
+        }
+        if(mostrarHora2 == false && mostrarFecha2 == false) {
+            mostrarCadena = "";
+        }
+        return mostrarCadena;
+    }
 }
